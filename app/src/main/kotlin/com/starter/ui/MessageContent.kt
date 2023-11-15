@@ -1,4 +1,4 @@
-package com.starter
+package com.starter.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,20 +9,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-internal fun MainContent(
-    content: String,
+internal fun MessageContent(
+    message: String,
     modifier: Modifier = Modifier,
 ) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier.fillMaxSize(),
     ) {
-        Text(text = content)
+        Text(text = message)
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun MainContentPreview() {
-    MainContent(content = "Hello World!")
+private fun MessageContentPreview() {
+    MessageContent(message = "Hello World!")
 }
