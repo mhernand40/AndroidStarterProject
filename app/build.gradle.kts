@@ -6,6 +6,14 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.androidxComposeCompiler.get().version
+    }
+
     namespace = "com.starter"
     compileSdk = 34
 
@@ -26,20 +34,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
         freeCompilerArgs += "-Xexplicit-api=strict"
     }
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.hiltAndroid)
+    implementation(libs.androidxActivityCompose)
+    implementation(libs.androidxCoreKtx)
     implementation(libs.material)
+    implementation(libs.androidxComposeMaterial3)
+    implementation(libs.hiltAndroid)
+    implementation(platform(libs.androidxComposeBom))
 
     ksp(libs.hiltCompiler)
 }

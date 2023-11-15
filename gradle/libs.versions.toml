@@ -1,5 +1,7 @@
 [versions]
 agp = "8.1.3"
+androidxComposeBom = "2023.10.01"
+androidxComposeCompiler = "1.5.4"
 dagger = "2.48.1"
 kotlin = "1.9.20"
 ksp = "1.9.20-1.0.14"
@@ -8,8 +10,15 @@ appcompat = "1.6.1"
 material = "1.10.0"
 
 [libraries]
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidxActivityCompose = { module = "androidx.activity:activity-compose" }
+androidxAppCompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidxCoreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidxComposeBom = { module = "androidx.compose:compose-bom", version.ref = "androidxComposeBom" }
+androidxComposeCompiler = { module = "androidx.compose.compiler:compiler", version.ref = "androidxComposeCompiler" }
+androidxComposeFoundation = { module = "androidx.compose.foundation:foundation" }
+androidxComposeMaterial3 = { module = "androidx.compose.material3:material3" }
+androidxComposeRuntime = { module = "androidx.compose.runtime:runtime" }
+androidxComposeUi = { module = "androidx.compose.ui:ui" }
 hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
