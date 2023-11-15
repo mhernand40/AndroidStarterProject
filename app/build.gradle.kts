@@ -44,7 +44,10 @@ android {
 }
 
 dependencies {
+    debugImplementation(libs.androidxComposeUiTooling)
+
     implementation(libs.androidxActivityCompose)
+    implementation(libs.androidxComposeUiToolingPreview)
     implementation(libs.androidxCoreKtx)
     implementation(libs.material)
     implementation(libs.androidxComposeMaterial3)
