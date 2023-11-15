@@ -21,6 +21,7 @@ androidxComposeRuntime = { module = "androidx.compose.runtime:runtime" }
 androidxComposeUi = { module = "androidx.compose.ui:ui" }
 androidxComposeUiTooling = { module = "androidx.compose.ui:ui-tooling" }
 androidxComposeUiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidxLifecycleViewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose" }
 hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
 material = { module = "com.google.android.material:material", version.ref = "material" }

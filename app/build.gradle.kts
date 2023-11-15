@@ -47,10 +47,11 @@ dependencies {
     debugImplementation(libs.androidxComposeUiTooling)
 
     implementation(libs.androidxActivityCompose)
+    implementation(libs.androidxComposeMaterial3)
     implementation(libs.androidxComposeUiToolingPreview)
     implementation(libs.androidxCoreKtx)
+    implementation(libs.androidxLifecycleViewModelCompose)
     implementation(libs.material)
-    implementation(libs.androidxComposeMaterial3)
     implementation(libs.hiltAndroid)
     implementation(platform(libs.androidxComposeBom))
 
