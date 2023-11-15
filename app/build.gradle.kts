@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.hiltAndroidGradlePlugin)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -29,11 +31,15 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+        freeCompilerArgs += "-Xexplicit-api=strict"
     }
 }
 
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.hiltAndroid)
     implementation(libs.material)
+
+    ksp(libs.hiltCompiler)
 }
