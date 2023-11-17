@@ -4,6 +4,7 @@ androidxComposeBom = "2023.10.01"
 androidxComposeCompiler = "1.5.4"
 dagger = "2.48.1"
 kotlin = "1.9.20"
+kotlinxCoroutines = "1.7.3"
 ksp = "1.9.20-1.0.14"
 coreKtx = "1.12.0"
 appcompat = "1.6.1"
@@ -24,6 +25,8 @@ androidxComposeUiToolingPreview = { module = "androidx.compose.ui:ui-tooling-pre
 androidxLifecycleViewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose" }
 hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
+kotlinxCoroutinesBom = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-bom", version.ref = "kotlinxCoroutines" }
+kotlinxCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 
 [plugins]

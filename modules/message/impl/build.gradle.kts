@@ -35,6 +35,8 @@ dependencies {
   api(projects.modules.message.public)
 
   implementation(libs.hiltAndroid)
+  implementation(libs.kotlinxCoroutinesCore)
+  implementation(platform(libs.kotlinxCoroutinesBom))
 
   ksp(libs.hiltCompiler)
 }
