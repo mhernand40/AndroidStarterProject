@@ -26,7 +26,7 @@ private fun MainContent(
 ) {
     val uiModel by viewModel.uiModel.collectAsState()
     MessageContent(
-        message = uiModel,
+        uiModel = uiModel,
         modifier = modifier,
     )
 }
