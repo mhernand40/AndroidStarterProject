@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
   alias(libs.plugins.androidApplication)
   alias(libs.plugins.hiltAndroidGradlePlugin)
@@ -36,6 +38,10 @@ android {
   kotlinOptions {
     jvmTarget = "17"
     freeCompilerArgs += "-Xexplicit-api=strict"
+  }
+  testOptions {
+    unitTests.all { it.useJUnitPlatform() }
+    unitTests.isReturnDefaultValues = true
   }
 }
 
