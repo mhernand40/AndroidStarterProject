@@ -28,6 +28,7 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hiltAndroidGradlePlugin = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

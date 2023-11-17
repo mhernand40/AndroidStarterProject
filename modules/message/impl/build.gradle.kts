@@ -1,24 +1,16 @@
 plugins {
-  alias(libs.plugins.androidApplication)
+  alias(libs.plugins.androidLibrary)
   alias(libs.plugins.hiltAndroidGradlePlugin)
   alias(libs.plugins.jetbrainsKotlinAndroid)
   alias(libs.plugins.ksp)
 }
 
 android {
-  buildFeatures { compose = true }
-
-  composeOptions { kotlinCompilerExtensionVersion = libs.androidxComposeCompiler.get().version }
-
-  namespace = "com.starter"
+  namespace = "com.starter.message"
   compileSdk = 34
 
   defaultConfig {
-    applicationId = "com.starter"
     minSdk = 24
-    targetSdk = 34
-    versionCode = 1
-    versionName = "1.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -40,18 +32,9 @@ android {
 }
 
 dependencies {
-  debugImplementation(libs.androidxComposeUiTooling)
+  api(projects.modules.message.public)
 
-  implementation(projects.modules.message.impl)
-
-  implementation(libs.androidxActivityCompose)
-  implementation(libs.androidxComposeMaterial3)
-  implementation(libs.androidxComposeUiToolingPreview)
-  implementation(libs.androidxCoreKtx)
-  implementation(libs.androidxLifecycleViewModelCompose)
-  implementation(libs.material)
   implementation(libs.hiltAndroid)
-  implementation(platform(libs.androidxComposeBom))
 
   ksp(libs.hiltCompiler)
 }
