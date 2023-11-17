@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
   repositories {
     google {
@@ -22,6 +24,10 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Android Starter Project"
+rootProject.name = "Android-Starter-Project"
 
-include(":app")
+include(
+    ":app",
+    ":modules:message:impl",
+    ":modules:message:public",
+)
