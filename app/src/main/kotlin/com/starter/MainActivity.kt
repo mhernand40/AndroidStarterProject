@@ -13,10 +13,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 internal class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent { MainContent() }
-    }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContent { MainContent() }
+  }
 }
 
 @Composable
@@ -24,9 +24,9 @@ private fun MainContent(
     modifier: Modifier = Modifier,
     viewModel: MainViewModel = viewModel(),
 ) {
-    val uiModel by viewModel.uiModel.collectAsState()
-    MessageContent(
-        uiModel = uiModel,
-        modifier = modifier,
-    )
+  val uiModel by viewModel.uiModel.collectAsState()
+  MessageContent(
+      uiModel = uiModel,
+      modifier = modifier,
+  )
 }
