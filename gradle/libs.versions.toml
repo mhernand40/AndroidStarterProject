@@ -9,6 +9,7 @@ ksp = "1.9.20-1.0.14"
 coreKtx = "1.12.0"
 appcompat = "1.6.1"
 material = "1.10.0"
+spotless = "6.22.0"
 
 [libraries]
 androidxActivityCompose = { module = "androidx.activity:activity-compose" }
@@ -35,4 +36,5 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 hiltAndroidGradlePlugin = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 

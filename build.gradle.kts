@@ -5,4 +5,13 @@ plugins {
   alias(libs.plugins.hiltAndroidGradlePlugin) apply false
   alias(libs.plugins.jetbrainsKotlinAndroid) apply false
   alias(libs.plugins.ksp) apply false
+  alias(libs.plugins.spotless)
+}
+
+spotless {
+  kotlin {
+    target("**/src/**/kotlin/**/*.kt")
+    ktfmt()
+  }
+  kotlinGradle { ktfmt() }
 }
