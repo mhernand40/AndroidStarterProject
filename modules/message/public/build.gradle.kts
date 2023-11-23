@@ -1,12 +1,43 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+@file:Suppress("UnstableApiUsage")
 
-plugins { kotlin("jvm") }
-
-kotlin {
-  explicitApi()
-  compilerOptions { jvmTarget = JvmTarget.JVM_17 }
+plugins {
+  alias(libs.plugins.android.library)
+  alias(libs.plugins.jetbrains.kotlin.android)
+  id("kotlin-parcelize")
 }
 
-tasks.test {
-  useJUnitPlatform()
+android {
+  namespace = "com.starter.message"
+  compileSdk = 34
+
+  defaultConfig {
+    minSdk = 24
+
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      isMinifyEnabled = true
+      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+    }
+  }
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+  }
+  kotlinOptions {
+    jvmTarget = "17"
+    freeCompilerArgs += "-Xexplicit-api=strict"
+  }
+  testOptions {
+    unitTests.all { it.useJUnitPlatform() }
+    unitTests.isReturnDefaultValues = true
+  }
+}
+
+dependencies {
+  api(libs.circuit)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(platform(libs.kotlinx.coroutines.bom))
 }

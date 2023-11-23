@@ -3,30 +3,26 @@ package com.starter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.starter.ui.MessageContent
+import com.slack.circuit.backstack.rememberSaveableBackStack
+import com.slack.circuit.foundation.Circuit
+import com.slack.circuit.foundation.CircuitCompositionLocals
+import com.slack.circuit.foundation.NavigableCircuitContent
+import com.slack.circuit.foundation.rememberCircuitNavigator
+import com.starter.message.ui.MessageScreen
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 internal class MainActivity : ComponentActivity() {
+
+  @Inject internal lateinit var circuit: Circuit
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContent { MainContent() }
+    setContent {
+      val backstack = rememberSaveableBackStack { push(MessageScreen) }
+      val navigator = rememberCircuitNavigator(backstack)
+      CircuitCompositionLocals(circuit) { NavigableCircuitContent(navigator, backstack) }
+    }
   }
-}
-
-@Composable
-private fun MainContent(
-    modifier: Modifier = Modifier,
-    viewModel: MainViewModel = viewModel(),
-) {
-  val uiModel by viewModel.uiModel.collectAsState()
-  MessageContent(
-      uiModel = uiModel,
-      modifier = modifier,
-  )
 }

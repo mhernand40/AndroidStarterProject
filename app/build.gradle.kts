@@ -46,15 +46,9 @@ android {
 }
 
 dependencies {
-  debugImplementation(libs.androidx.compose.ui.tooling)
-
-  implementation(projects.modules.message.impl)
+  api(projects.modules.message.impl)
 
   implementation(libs.androidx.activity.compose)
-  implementation(libs.androidx.compose.material3)
-  implementation(libs.androidx.compose.ui.tooling.preview)
-  implementation(libs.androidx.core.ktx)
-  implementation(libs.androidx.lifecycle.view.model.compose)
   implementation(libs.material)
   implementation(libs.hilt.android)
   implementation(platform(libs.androidx.compose.bom))
