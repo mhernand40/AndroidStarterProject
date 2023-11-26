@@ -1,16 +1,16 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-  alias(libs.plugins.androidApplication)
-  alias(libs.plugins.hiltAndroidGradlePlugin)
-  alias(libs.plugins.jetbrainsKotlinAndroid)
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.hilt.android.gradle.plugin)
+  alias(libs.plugins.jetbrains.kotlin.android)
   alias(libs.plugins.ksp)
 }
 
 android {
   buildFeatures { compose = true }
 
-  composeOptions { kotlinCompilerExtensionVersion = libs.androidxComposeCompiler.get().version }
+  composeOptions { kotlinCompilerExtensionVersion = libs.androidx.compose.compiler.get().version }
 
   namespace = "com.starter"
   compileSdk = 34
@@ -46,18 +46,18 @@ android {
 }
 
 dependencies {
-  debugImplementation(libs.androidxComposeUiTooling)
+  debugImplementation(libs.androidx.compose.ui.tooling)
 
   implementation(projects.modules.message.impl)
 
-  implementation(libs.androidxActivityCompose)
-  implementation(libs.androidxComposeMaterial3)
-  implementation(libs.androidxComposeUiToolingPreview)
-  implementation(libs.androidxCoreKtx)
-  implementation(libs.androidxLifecycleViewModelCompose)
+  implementation(libs.androidx.activity.compose)
+  implementation(libs.androidx.compose.material3)
+  implementation(libs.androidx.compose.ui.tooling.preview)
+  implementation(libs.androidx.core.ktx)
+  implementation(libs.androidx.lifecycle.view.model.compose)
   implementation(libs.material)
-  implementation(libs.hiltAndroid)
-  implementation(platform(libs.androidxComposeBom))
+  implementation(libs.hilt.android)
+  implementation(platform(libs.androidx.compose.bom))
 
-  ksp(libs.hiltCompiler)
+  ksp(libs.hilt.compiler)
 }

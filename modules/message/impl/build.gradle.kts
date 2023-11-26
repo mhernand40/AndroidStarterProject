@@ -1,9 +1,9 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-  alias(libs.plugins.androidLibrary)
-  alias(libs.plugins.hiltAndroidGradlePlugin)
-  alias(libs.plugins.jetbrainsKotlinAndroid)
+  alias(libs.plugins.android.library)
+  alias(libs.plugins.hilt.android.gradle.plugin)
+  alias(libs.plugins.jetbrains.kotlin.android)
   alias(libs.plugins.ksp)
 }
 
@@ -40,9 +40,9 @@ android {
 dependencies {
   api(projects.modules.message.public)
 
-  implementation(libs.hiltAndroid)
-  implementation(libs.kotlinxCoroutinesCore)
-  implementation(platform(libs.kotlinxCoroutinesBom))
+  implementation(libs.hilt.android)
+  implementation(libs.kotlinx.coroutines.core)
+  implementation(platform(libs.kotlinx.coroutines.bom))
 
-  ksp(libs.hiltCompiler)
+  ksp(libs.hilt.compiler)
 }
