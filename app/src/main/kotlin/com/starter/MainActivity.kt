@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.starter.ui.MessageContent
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +24,7 @@ private fun MainContent(
     modifier: Modifier = Modifier,
     viewModel: MainViewModel = viewModel(),
 ) {
-  val uiModel by viewModel.uiModel.collectAsState()
+  val uiModel by viewModel.uiModel.collectAsStateWithLifecycle()
   MessageContent(
       uiModel = uiModel,
       modifier = modifier,

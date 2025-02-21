@@ -5,20 +5,19 @@ plugins {
   alias(libs.plugins.hilt.android.gradle.plugin)
   alias(libs.plugins.jetbrains.kotlin.android)
   alias(libs.plugins.ksp)
+  alias(libs.plugins.compose.compiler)
 }
 
 android {
   buildFeatures { compose = true }
 
-  composeOptions { kotlinCompilerExtensionVersion = libs.androidx.compose.compiler.get().version }
-
   namespace = "com.starter"
-  compileSdk = 34
+  compileSdk = 35
 
   defaultConfig {
     applicationId = "com.starter"
     minSdk = 24
-    targetSdk = 34
+    targetSdk = 35
     versionCode = 1
     versionName = "1.0"
 
@@ -32,11 +31,11 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
   }
   kotlinOptions {
-    jvmTarget = "17"
+    jvmTarget = "21"
     freeCompilerArgs += "-Xexplicit-api=strict"
   }
   testOptions {
